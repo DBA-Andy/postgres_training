@@ -1,0 +1,7 @@
+# Common Linux commands I'll find useful
+
+- Show all the processes running as postgres user.
+  - This is also useful for figuring out the path to the binaries and such.
+```
+pgrep -a postgres
+```
