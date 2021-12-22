@@ -9,9 +9,9 @@
  order by prod.name;
 
  --Oracle
- set lines 200
+set lines 200
 set pagesize 200
-col customer_name format 80
+col customer_name format a80
 select cust_last_name || ',' || ' ' || cust_first_name as customer_name, cnt.country_name, prod.prod_name
 from sh.sales sls
   inner join sh.customers cust on cust.cust_id = sls.cust_id
