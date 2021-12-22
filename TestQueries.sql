@@ -1,5 +1,6 @@
 --Postgres
  \timing
+ \pset pager off
  select prod.name, prod.productnumber, proch.enddate, proch.standardcost, proch.modifieddate
  from production.product prod
    inner join production.productcosthistory proch on proch.productid  = prod.productid
@@ -11,7 +12,11 @@
  --Oracle
 set lines 200
 set pagesize 200
-col customer_name format a80
+set timing on
+set sqlformat ansiconsole
+col customer_name format a35
+col country_name format a40
+col prod_name format a40
 select cust_last_name || ',' || ' ' || cust_first_name as customer_name, cnt.country_name, prod.prod_name
 from sh.sales sls
   inner join sh.customers cust on cust.cust_id = sls.cust_id
